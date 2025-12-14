@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "cinesense"
+version = "0.1.0"
+description = "CineSense delivers personalized movie suggestions via a Streamlit web interface, leveraging cosine similarity on implicit ratings. Fast data loading with Feather, Dockerized for easy deployment."
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+streamlit = "^1.29.0"
+pandas = "^2.0.3"
+scikit-learn = "^1.3.2"
+nltk = "^3.8.1"
+pyarrow = "^14.0.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.3"
+ruff = "^0.1.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

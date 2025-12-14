@@ -1,64 +1,96 @@
+# CineSense-Movie-Recommendation-Streamlit-Web-App
 
-# Simple Recommender System
+[![Build Status](https://img.shields.io/github/actions/workflow/status/chirag127/CineSense-Movie-Recommendation-Streamlit-Web-App/ci.yml?branch=main&style=flat-square)](https://github.com/chirag127/CineSense-Movie-Recommendation-Streamlit-Web-App/actions/workflows/ci.yml)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=flat-square)](https://www.python.org/downloads/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.29.0-red.svg?style=flat-square)](https://www.streamlit.io/)
+[![Docker](https://img.shields.io/badge/Docker-supported-blue.svg?style=flat-square)](https://www.docker.com/)
 
+CineSense delivers personalized movie suggestions via a Streamlit web interface, leveraging cosine similarity on implicit ratings.
 
-In this project, I made a Simple 
-Movie Recommender System using **Cosine
-Similarity**. This recommendation system 
-is made based on implicit ratings. I made 
-this specifically for learning about the 
-recommendation system, how they works etc.
+## ✨ Features
 
-The data is collected from **Kaggle**. You have 
-to download the csv named *netflix_data.csv* from
-the **data** folder in this repo. 
+-   :clapper: **Personalized Recommendations:** Get movie suggestions tailored to your taste.
+-   :rocket: **Fast and Efficient:** Uses `feather` for quick data loading.
+-   :whale: **Dockerized:** Easy to deploy with Docker.
+-   :art: **User-Friendly Interface:** Built with Streamlit for a smooth user experience.
 
-While doing this project, I have learned so 
-many things including:
+## 🚀 Installation and Usage
 
-- How to make a recommendation system when 
-  the data has no rating column or the ratings
-  are not in a desirable format.
-- I learned about using the **feather** 
-  file which loads much more faster 
-  than a **csv** file.
-- Cleaning the data according to my needs.
-- Usage of **Cosine Similarity** in 
-  Recommendation System etc.
-  
-## Screenshots
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/chirag127/CineSense-Movie-Recommendation-Streamlit-Web-App.git
+    cd CineSense-Movie-Recommendation-Streamlit-Web-App
+    ```
 
-![Screenshot (157)](https://user-images.githubusercontent.com/86141125/176416438-5f9ca8ba-732c-435f-a7bd-acd557262ce8.png)
+2.  **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate
+    ```
 
-![streamlit_demo](https://user-images.githubusercontent.com/86141125/176417390-89b93bef-1420-4be9-99af-44b1107610a4.gif)
-  
-## Deployment
+3.  **Install the dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-After creating the movie recommendation system,
-I made a **Streamlit app** and deploy that app
-in **Docker** locally. 
+4.  **Run the application:**
+    ```bash
+    python run.py
+    ```
 
-If you have docker installed, yoou can run this 
-project in your computer. Just clone this project,
-navigate to the project directory and run the 
-below command in your terminal.
-
-```bash
-  docker build -t <image-name> .
-```
-you can give the image name according to 
-your choice. After that you have to run the 
-below command in your terminal.
+## 🏗️ Architecture Tree
 
 ```
-  docker run --name <container-name> -p 5000:8501 <image-name>
+.
+├── .github
+│   ├── ISSUE_TEMPLATE
+│   │   └── bug_report.md
+│   ├── workflows
+│   │   └── ci.yml
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── badges.yml
+├── data
+│   ├── movie_list.pickle
+│   ├── netflix_dataset.csv
+│   └── tfidf_data.feather
+├── src
+│   ├── data
+│   │   ├── __init__.py
+│   │   └── preprocessing.py
+│   └── recommend
+│       ├── __init__.py
+│       └── recommend.py
+├── tests
+│   ├── __init__.py
+│   ├── test_data.py
+│   └── test_recommend.py
+├── .dockerignore
+├── .gitignore
+├── AGENTS.md
+├── app.py
+├── CONTRIBUTING.md
+├── Dockerfile
+├── LICENSE
+├── notebook.ipynb
+├── PROPOSED_README.md
+├── pyproject.toml
+├── README.md
+├── requirements.txt
+├── ruff.toml
+└── run.py
 ```
-That's it, you can see the application running 
-in your browser.
 
+## 🤝 Contributing
 
-## 🔗 Contact Me
+Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/srang992/)
-[![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/subhradeep_rang)
+## 📄 License
 
+This project is licensed under the [CC BY-NC 4.0 License](LICENSE).
+
+---
+
+## ⭐ Star This Repo
+
+If you find this project useful, please consider giving it a star!
