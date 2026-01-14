@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SimpleRecommender – Movie Recommendation Made Easy</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <header class="glass">
+    <h1>SimpleRecommender</h1>
+    <p>Get instant movie recommendations using Cosine Similarity.</p>
+    <a class="btn" href="https://github.com/chirag127/SimpleRecommender" target="_blank">View on GitHub</a>
+    <a class="btn" href="../simple_recommender.py" download>Download Code</a>
+  </header>
+
+  <section class="glass">
+    <h2>How It Works</h2>
+    <ul>
+      <li>Load the Netflix watch‑history CSV.</li>
+      <li>Build a user‑movie matrix (implicit ratings).</li>
+      <li>Compute cosine similarity between movies.</li>
+      <li>Return the top‑N most similar titles.</li>
+    </ul>
+  </section>
+
+  <section class="glass">
+    <h2>Try It Live</h2>
+    <p>Enter a movie title and see the recommendations instantly.</p>
+    <form id="demoForm">
+      <input type="text" id="movie" placeholder="e.g., The Matrix" required>
+      <input type="number" id="count" min="1" max="20" value="5">
+      <button type="submit" class="btn">Get Recommendations</button>
+    </form>
+    <pre id="output"></pre>
+  </section>
+</div>
+<footer class="glass">
+  <p>© 2026 Chirag Singhal | <a href="https://github.com/chirag127" target="_blank">GitHub</a> | <a href="https://buymeacoffee.com/WhyIsWhen" target="_blank">BuyMeACoffee</a></p>
+</footer>
+<script>
+// Simple front‑end demo – uses a pre‑computed JSON of recommendations (mocked for demo)
+const mockData = {
+  "The Matrix": ["Inception", "Blade Runner", "Terminator 2", "The Matrix Reloaded", "Dark City"]
+};
+document.getElementById('demoForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const title = document.getElementById('movie').value.trim();
+  const count = parseInt(document.getElementById('count').value,10);
+  const recs = mockData[title] ? mockData[title].slice(0,count) : ['No data available'];
+  document.getElementById('output').textContent = recs.map((r,i)=>`${i+1}. ${r}`).join('\n');
+});
+</script>
+</body>
+</html>
